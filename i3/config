@@ -48,9 +48,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Cambiar la distribución (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacked #Stack
-bindsym $mod+w layout tabbed #Pestañas
-bindsym $mod+e layout toggle split #Dividida
+bindsym $mod+s layout stacked
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # Ventana flotante
 bindsym $mod+Shift+z floating toggle

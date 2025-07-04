@@ -13,13 +13,14 @@ Esta fueron las aplicaciones que se instalaron junto al entorno.
 | i3        | Escritorio.                                                                  |
 | dmenu     | Menú con el que se puede acceder fácilmente tanto a comandos como programas. |
 | Rofi      | Menú visual con el cual acceder sencillamente a los programas                |
-| polybar   | Barra de estado                                                              |
+| polybar   | Barra de estado personalizable                                               |
 | btop      | Gestor de tareas                                                             |
 | feh       | Visor de imágenes que nos permite establecer un fondo de pantallas           |
 | playerctl | Control de reproducción de medios para las teclas especiales                 |
 | Alacritty | Terminal                                                                     |
 
 ## Combinación teclas
+Se configuró como `$mod`a la tecla de Windows
 ### I3
 
 | Combinación           | Proceso ejecutado     | Acción realizada             |
@@ -27,10 +28,11 @@ Esta fueron las aplicaciones que se instalaron junto al entorno.
 | `$mod+Shift+c`        | `reload`              | Recargar configuración de i3 |
 | `$mod+Shift+r`        | `restart`             | Reiniciar i3                 |
 | `$mod+Shift+e`        | `exit`                | Salir de i3                  |
-| `$mod+Shift+x`        | `i3lock               | Bloquear pantalla            |
+| `$mod+Shift+x`        | `i3lock`              | Bloquear pantalla            |
 | `Control+$mod+Delete` | `~/.i3/shutdown_menu` | Abrir menú de apagado        |
 
 ### Gestión ventanas
+Selección de teclas con las cuales navegaremos a través de las ventanas, sus funciones van desde mover ventanas hasta cambiar su tamaño.
 
 | Combinación        | Proceso ejecutado     | Acción realizada                             |
 | ------------------ | --------------------- | -------------------------------------------- |
@@ -74,6 +76,7 @@ Esta fueron las aplicaciones que se instalaron junto al entorno.
 | `XF86AudioNext`         | `playerctl next`               | Siguiente pista                     |
 | `XF86AudioPrev`         | `playerctl previous`           | Pista anterior                      |
 ### Atajos a aplicaciones
+Se definieron unas selecciones de teclas para abrir rápidamente aplicaciones de constante uso.
 
 | Combinación    | Proceso ejecutado            | Acción realizada                            |
 | -------------- | ---------------------------- | ------------------------------------------- |
@@ -86,3 +89,16 @@ Esta fueron las aplicaciones que se instalaron junto al entorno.
 | `$mod+F5`      | `btop`                       | Ejecutar monitor de sistema Btop            |
 | `$mod+F6`      | `youtube-music`              | Ejecutar aplicación YouTube Music           |
 | `$mod+Return`  | `alacritty`                  | Abrir terminal Alacritty                    |
+
+## Instalación
+
+```bash
+#Clonar la carpeta
+ git clone git@github.com:Jekyu/Dots.git
+
+#Ir hasta la carpeta
+cd ~/Dots
+
+# Ejecutar el instalador
+sh install.sh
+```
