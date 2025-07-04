@@ -12,6 +12,8 @@ echo "Aplicaciones instaladas completamente"
 ln -sf ~/Dots/i3 ~/.config/i3
 #Enlace polybar
 ln -sf ~/Dots/polybar ~/.config/polybar
+#Enlace polybar
+ln -sf ~/Dots/zed ~/.config/zed
 
 echo "Enlaces simbolicos creados"
 
