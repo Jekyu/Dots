@@ -153,10 +153,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exit
-bindsym $mod+Shift+x exec i3lock --color "$base01"
+bindsym $mod+Shift+x exec i3lock
 
 # Logout menu
-bindsym Control+$mod+Delete exec ~/.i3/shutdown_menu
+bindsym $mod+h exec ~/.i3/shutdown_menu
 
 # ------- TECLAS ESPECIALES
 
