@@ -1,0 +1,212 @@
+#Archivo de configuración principal
+#Tener cuidado al removerlo o configurarlo
+
+#Establecer tecla de control Mod4 = windows
+set $mod Mod4
+
+# ------- APLICIONES DE INICIO
+
+exec_always sh ~/.config/polybar/launch.sh
+
+# ----- FUENTES ------
+#font pango:System San Francisco Display 10
+
+font pango:DejaVu Sans Mono 8
+
+# ------ MENU -----
+
+bindsym $mod+d exec rofi -modi drun -show drun
+#bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+
+# bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop #Solo muestra aplicaciones
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run
+
+# ---- VENTANAS ------
+
+# Cambiar la ventana enfocada:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Mover la pantalla enfocada
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move upH
+bindsym $mod+Shift+Right move right
+
+# Cerrar la ventana enfocada
+bindsym $mod+q kill
+
+# División horizontal
+bindsym $mod+b split h
+
+# División vertical
+bindsym $mod+v split v
+
+# Pantalla completa
+bindsym $mod+f fullscreen toggle
+
+# Cambiar la distribución (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacked #Stack
+bindsym $mod+w layout tabbed #Pestañas
+bindsym $mod+e layout toggle split #Dividida
+
+# Ventana flotante
+bindsym $mod+Shift+z floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+z focus mode_toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Cambiar el tamaño de ventana
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# --------- WORKSPACE ---------
+
+# Startup Programs
+  exec --no-startup-id nm-applet
+  #exec --no-startup-id dunst
+  #exec --no-startup-id dropbox
+  #exec_always --no-startup-id feh --bg-scale ~/.wallpaper.png
+
+# Establecer los workspace
+
+set $workspace1 1
+set $workspace2 2
+set $workspace3 3
+set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
+
+# TECLAS para cambiar al workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# Mover container al workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+workspace $workspace1 output HDMI1
+workspace $workspace2 output HDMI1
+workspace $workspace3 output HDMI1
+workspace $workspace4 output HDMI1
+workspace $workspace9 output VGA1
+workspace $workspace10 output VGA1
+
+# ------- CONFIGURACIONES DE I3
+
+# Recargar la configuración
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exit
+bindsym $mod+Shift+x exec i3lock --color "$base01"
+
+# Logout menu
+bindsym Control+$mod+Delete exec ~/.i3/shutdown_menu
+
+# ------- TECLAS ESPECIALES
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec ~/.i3/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+# Instalar playerctl
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Abrir programas con los F
+
+bindsym $mod + F1 exec zen
+bindsym $mod + F2 exec zed
+bindsym $mod + F3 exec thunar
+bindsym $mod + F4 exec obsidian
+bindsym $mod + F5 exec btop
+bindsym $mod + F6 exec youtube-music
+
+# Iniciar una terminal
+bindsym $mod+Return exec alacritty
+
+# --------- VISUALIZACIÓN ---------
+
+# Establecer fondo de pantalla
+exec_always feh --bg-scale ~/.config/i3/Wallpaper/W2.png
+exec_always nitrogen --restore
+
+# Set display mode
+exec_always xrandr --output VIRTUAL1 --off --output DP2 --off --output DP1 --off  --output HDMI2 --off --output HDMI1 --primary --mode 1920x1200 --pos 1280x0 --rotate normal --output VGA1 --auto --left-of HDMI1
+
+# Bordes
+
+gaps outer 5
+gaps inner 5
+
+# Fix Nautilius issue on Ubuntu
+exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
+exec_always gsettings set org.nemo.desktop show-desktop-icons false
+
+exec_always compton -f
