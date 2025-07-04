@@ -8,16 +8,18 @@ Para este caso se uso el entorno de gestor de ventanas **i3** el cual se caracte
 ## Aplicaciones
 Esta fueron las aplicaciones que se instalaron junto al entorno.
 
-| Programa  | Función                                                                      |
-| --------- | ---------------------------------------------------------------------------- |
-| i3        | Escritorio.                                                                  |
-| dmenu     | Menú con el que se puede acceder fácilmente tanto a comandos como programas. |
-| Rofi      | Menú visual con el cual acceder sencillamente a los programas                |
-| polybar   | Barra de estado personalizable                                               |
-| btop      | Gestor de tareas                                                             |
-| feh       | Visor de imágenes que nos permite establecer un fondo de pantallas           |
-| playerctl | Control de reproducción de medios para las teclas especiales                 |
-| Alacritty | Terminal                                                                     |
+| Programa        | Función                                                                      |
+| --------------- | ---------------------------------------------------------------------------- |
+| i3              | Escritorio.                                                                  |
+| dmenu           | Menú con el que se puede acceder fácilmente tanto a comandos como programas. |
+| Rofi            | Menú visual con el cual acceder sencillamente a los programas                |
+| Polybar         | Barra de estado personalizable                                               |
+| Btop            | Gestor de tareas                                                             |
+| Feh             | Visor de imágenes que nos permite establecer un fondo de pantallas           |
+| Playerctl       | Control de reproducción de medios para las teclas especiales                 |
+| Alacritty       | Terminal                                                                     |
+| Obsidian        | Gestor de notas markdown                                                     |
+| mate-screenshot | Captura de pantalla de mate                                                  |
 
 ## Combinación teclas
 Se configuró como `$mod`a la tecla de Windows
@@ -75,6 +77,7 @@ Selección de teclas con las cuales navegaremos a través de las ventanas, sus f
 | `XF86AudioPause`        | `playerctl pause`              | Pausar medio                        |
 | `XF86AudioNext`         | `playerctl next`               | Siguiente pista                     |
 | `XF86AudioPrev`         | `playerctl previous`           | Pista anterior                      |
+| `Print`                 | mate-screenshot --interactive  | Menu interactivo de mate screenshot |
 ### Atajos a aplicaciones
 Se definieron unas selecciones de teclas para abrir rápidamente aplicaciones de constante uso.
 
@@ -89,9 +92,7 @@ Se definieron unas selecciones de teclas para abrir rápidamente aplicaciones de
 | `$mod+F5`      | `btop`                       | Ejecutar monitor de sistema Btop            |
 | `$mod+F6`      | `youtube-music`              | Ejecutar aplicación YouTube Music           |
 | `$mod+Return`  | `alacritty`                  | Abrir terminal Alacritty                    |
-
 ## Instalación
-
 ```bash
 #Clonar la carpeta
  git clone git@github.com:Jekyu/Dots.git
