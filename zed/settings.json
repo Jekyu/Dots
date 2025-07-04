@@ -1,0 +1,86 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // ---- GENERAL
+
+  "theme": {
+    "mode": "light",
+    "light": "Gruvbox Dark Soft",
+    "dark": "One Dark"
+  },
+
+  // ---- SYSTEM IU -----
+
+  // UI Font. Use ".SystemUIFont" to use the default system font (SF Pro on macOS)
+  "ui_font_family": "Noto Sans Mono",
+  "ui_font_weight": 300, // Font weight in standard CSS units from 100 to 900.
+  "ui_font_size": 16,
+  "lsp_document_colors": "background",
+
+  //  ---- TERMINAL ----
+
+  // Terminal Font Settings
+  "terminal": {
+    "font_family": "Noto Sans Mono",
+    "font_size": 14,
+    // Terminal line height: comfortable (1.618), standard(1.3) or `{ "custom": 2 }`
+    "line_height": "standard"
+  },
+
+  // Agent Panel Font Settings
+  "agent_font_size": 15,
+
+  //   ----- EDITOR ------
+
+  "soft_wrap": "editor_width", //Sato de linea
+  // Buffer Font - Used by editor buffers
+  "buffer_font_family": "Noto Sans Mono", // Font name for editor buffers
+  "buffer_font_size": 14, // Font size for editor buffers
+  "buffer_font_weight": 300, // Font weight in CSS units [100-900]
+  // Espacio entre lineas "comfortable" (1.618), "standard" (1.3) or custom: `{ "custom": 2 }`
+  //
+  "buffer_line_height": "standard",
+
+  // Minimap related settings
+  "minimap": {
+    "show": "auto", // When to show (auto, always, never)
+    "display_in": "active_editor", // Where to show (active_editor, all_editor)
+    "thumb": "always", // When to show thumb (always, hover)
+    "thumb_border": "left_open", // Thumb border (left_open, right_open, full, none)
+    "max_width_columns": 50, // Maximum width of minimap
+    "current_line_highlight": null // Highlight current line (null, line, gutter)
+  },
+
+  //  ---- PANEL DEL PROYECTO
+
+  "project_panel": {
+    "button": true, // Show/hide button in the status bar
+    "default_width": 240, // Default panel width
+    "dock": "left", // Position of the dock (left, right)
+    "entry_spacing": "standard", // Vertical spacing (comfortable, standard)
+    "file_icons": true, // Show/hide file icons
+    "folder_icons": true, // Show/hide folder icons
+    "git_status": true, // Indicate new/updated files
+    "indent_size": 20, // Pixels for each successive indent
+    "auto_reveal_entries": true, // Show file in panel when activating its buffer
+    "auto_fold_dirs": true, // Fold dirs with single subdir
+    "scrollbar": {
+      // Project panel scrollbar settings
+      "show": null // Show/hide: (auto, system, always, never)
+    },
+    "show_diagnostics": "all", //
+    // Settings related to indent guides in the project panel.
+    "indent_guides": {
+      // When to show indent guides in the project panel. (always, never)
+      "show": "always"
+    },
+    // Whether to hide the root entry when only one folder is open in the window.
+    "hide_root": false
+  }
+}

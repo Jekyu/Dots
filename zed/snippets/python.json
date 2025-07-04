@@ -1,0 +1,13 @@
+{
+  "Default function": {
+    "prefix": "def",
+    "description": "A simple function template",
+    "body": ["def ${1:...}(${2:...}) -> ${3:None}:", "    $0"]
+  },
+
+  "For function": {
+    "prefix": "for",
+    "description": "A simple for template",
+    "body": ["for ${1:...} in ${2:...}:", "   $0"]
+  }
+}
