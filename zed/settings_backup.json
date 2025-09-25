@@ -14,28 +14,29 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4.1"
-    }
+    },
+    "version": "2"
   },
   "theme": {
     "mode": "light",
-    "light": "Gruvbox Dark Hard",
+    "light": "Gruvbox Dark",
     "dark": "One Dark"
   },
 
   // ---- SYSTEM IU -----
 
   // UI Font. Use ".SystemUIFont" to use the default system font (SF Pro on macOS)
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_family": "Noto Sans Mono",
   "ui_font_weight": 300, // Font weight in standard CSS units from 100 to 900.
-  "ui_font_size": 15,
+  "ui_font_size": 16,
   "lsp_document_colors": "background",
 
   //  ---- TERMINAL ----
 
   // Terminal Font Settings
   "terminal": {
-    "font_family": "JetBrains Mono",
-    "font_size": 15,
+    "font_family": "Noto Sans Mono",
+    "font_size": 14,
     // Terminal line height: comfortable (1.618), standard(1.3) or `{ "custom": 2 }`
     "line_height": "standard"
   },
@@ -47,8 +48,8 @@
 
   "soft_wrap": "editor_width", //Sato de linea
   // Buffer Font - Used by editor buffers
-  "buffer_font_family": "JetBrains Mono", // Font name for editor buffers
-  "buffer_font_size": 14.7, // Font size for editor buffers
+  "buffer_font_family": "Noto Sans Mono", // Font name for editor buffers
+  "buffer_font_size": 14, // Font size for editor buffers
   "buffer_font_weight": 300, // Font weight in CSS units [100-900]
   // Espacio entre lineas "comfortable" (1.618), "standard" (1.3) or custom: `{ "custom": 2 }`
   //
@@ -89,9 +90,5 @@
     },
     // Whether to hide the root entry when only one folder is open in the window.
     "hide_root": false
-  },
-
-  // Data science
-
-  "jupyter": { "enabled": true }
+  }
 }
