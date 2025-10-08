@@ -2,13 +2,10 @@
 
 #Instalar aplicaciones
 
-sudo apt update && sudo apt install -y polybar alacritty btop feh dmenu rofi playerctl obsidian mate-screenshot
+sudo apt update && sudo apt install -y polybar kitty ranger htop feh dmenu rofi playerctl obsidian flameshot
 
 #Instalar ZED
 curl -f https://zed.dev/install.sh | sh
-
-#
-
 
 echo "Aplicaciones instaladas completamente"
 
@@ -17,14 +14,17 @@ echo "Aplicaciones instaladas completamente"
 #Enlace i3
 ln -sf ~/Dots/i3 ~/.config/i3
 
+#Enlace Kitty
+ln -sf ~/Dots/kitty ~/.config/kitty
+
 #Enlace polybar
 ln -sf ~/Dots/polybar ~/.config/polybar
 
-#Enlace Zed
-ln -sf ~/Dots/zed ~/.config/zed
-
 #Enlace rofi
 ln -sf ~/Dots/rofi ~/.config/rofi
+
+#Enlace Zed
+ln -sf ~/Dots/zed ~/.config/zed
 
 
 echo "Enlaces simbolicos creados"

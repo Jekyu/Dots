@@ -17,9 +17,9 @@ Esta fueron las aplicaciones que se instalaron junto al entorno.
 | Btop            | Gestor de tareas                                                             |
 | Feh             | Visor de imágenes que nos permite establecer un fondo de pantallas           |
 | Playerctl       | Control de reproducción de medios para las teclas especiales                 |
-| Alacritty       | Terminal                                                                     |
+| Kitty       | Terminal                                                                     |
 | Obsidian        | Gestor de notas markdown                                                     |
-| mate-screenshot | Captura de pantalla de mate                                                  |
+| flameshot | Captura de pantalla de mate                                                  |
 
 ## Combinación teclas
 Se configuró como `$mod`a la tecla de Windows
@@ -77,7 +77,7 @@ Selección de teclas con las cuales navegaremos a través de las ventanas, sus f
 | `XF86AudioPause`        | `playerctl pause`              | Pausar medio                        |
 | `XF86AudioNext`         | `playerctl next`               | Siguiente pista                     |
 | `XF86AudioPrev`         | `playerctl previous`           | Pista anterior                      |
-| `Print`                 | mate-screenshot --interactive  | Menu interactivo de mate screenshot |
+| `Print`                 | '--no-startup-id flameshot gui'  | Menu interactivo de flameshot |
 ### Atajos a aplicaciones
 Se definieron unas selecciones de teclas para abrir rápidamente aplicaciones de constante uso.
 
@@ -91,7 +91,7 @@ Se definieron unas selecciones de teclas para abrir rápidamente aplicaciones de
 | `$mod+F4`      | `obsidian`                   | Ejecutar aplicación Obsidian                |
 | `$mod+F5`      | `btop`                       | Ejecutar monitor de sistema Btop            |
 | `$mod+F6`      | `youtube-music`              | Ejecutar aplicación YouTube Music           |
-| `$mod+Return`  | `alacritty`                  | Abrir terminal Alacritty                    |
+| `$mod+Return`  | `kitty`                  | Abrir terminal kitty                    |
 ## Instalación
 ```bash
 #Clonar la carpeta
