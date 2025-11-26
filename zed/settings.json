@@ -21,34 +21,33 @@
     "light": "Gruvbox Dark Soft",
     "dark": "One Dark"
   },
-
   // ---- SYSTEM IU -----
 
   // UI Font. Use ".SystemUIFont" to use the default system font (SF Pro on macOS)
   "ui_font_family": "JetBrains Mono",
-  "ui_font_weight": 300, // Font weight in standard CSS units from 100 to 900.
-  "ui_font_size": 15,
+  "ui_font_weight": 100, // Font weight in standard CSS units from 100 to 900.
+  "ui_font_size": 5,
   "lsp_document_colors": "background",
 
   //  ---- TERMINAL ----
 
   // Terminal Font Settings
   "terminal": {
-    "font_family": "JetBrains Mono",
-    "font_size": 15,
+    "font_family": "Latin Modern Mono",
+    "font_size": 6,
     // Terminal line height: comfortable (1.618), standard(1.3) or `{ "custom": 2 }`
     "line_height": "standard"
   },
 
   // Agent Panel Font Settings
-  "agent_font_size": 15,
+  "agent_font_size": 4,
 
   //   ----- EDITOR ------
 
   "soft_wrap": "editor_width", //Sato de linea
   // Buffer Font - Used by editor buffers
-  "buffer_font_family": "JetBrains Mono", // Font name for editor buffers
-  "buffer_font_size": 14.7, // Font size for editor buffers
+  "buffer_font_family": "~/Dots/szed/fonts/JetBrainsMono-Regular.ttf", // Font name for editor buffers
+  "buffer_font_size": 6, // Font size for editor buffers
   "buffer_font_weight": 300, // Font weight in CSS units [100-900]
   // Espacio entre lineas "comfortable" (1.618), "standard" (1.3) or custom: `{ "custom": 2 }`
   //
@@ -74,7 +73,7 @@
     "file_icons": true, // Show/hide file icons
     "folder_icons": true, // Show/hide folder icons
     "git_status": true, // Indicate new/updated files
-    "indent_size": 20, // Pixels for each successive indent
+    "indent_size": 15, // Pixels for each successive indent
     "auto_reveal_entries": true, // Show file in panel when activating its buffer
     "auto_fold_dirs": true, // Fold dirs with single subdir
     "scrollbar": {
@@ -93,5 +92,11 @@
 
   // Data science
 
-  "jupyter": { "enabled": true }
+  "jupyter": { "enabled": true },
+  "fonts": [
+    {
+      "path": "~/Dots/zed/fonts/JetBrainsMono-Regular.ttf",
+      "names": ["JetBrains Mono"]
+    }
+  ]
 }

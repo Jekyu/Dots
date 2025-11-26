@@ -7,6 +7,7 @@ set $mod Mod4
 # ------- APLICIONES DE INICIO
 
 exec_always sh ~/.config/polybar/launch.sh
+exec --no-startup-id lxpolkit
 
 # ----- FUENTES ------
 #font pango:System San Francisco Display 10
