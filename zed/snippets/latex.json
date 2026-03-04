@@ -1,7 +1,0 @@
-{
-  "Fraction": {
-    "prefix": "frac",
-    "description": "Fraction for equations",
-    "body": ["´\frac ${{1:...}}${{2:...}}$0"]
-  }
-}
