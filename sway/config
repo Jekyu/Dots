@@ -10,14 +10,16 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term wezterm
-# Your preferred application launcher
-set $menu wofi
 
+# Your preferred apps
+set $term foot                # Terminal emulator
+set $menu rofi                # Application launcher
+set $browser helium-browser   # Browser
 
 # Wallpaper
-exec_always swaybg -i ~/Dots/sway/Wallpaper/Guapa.jpg -m fill
+# hide_edge_borders --i3 none|vertical|horizontal|both|smart|smart_no_gaps
+default_border none
+exec_always swaybg -i ~/Dots/sway/Wallpaper/W4.jpg -m fill
 include /etc/sway/config-vars.d/*
 
 # Gaps
@@ -43,7 +45,7 @@ font "JetBrainsMono Nerd Font" 9
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu --no-startup-id --show drun
+    bindsym $mod+d exec rofi -show drun
 
     # Arrastrar Containers 
     floating_modifier $mod normal
@@ -124,14 +126,10 @@ font "JetBrainsMono Nerd Font" 9
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-
+bindsym $mod+p border pixel 3
 # ------------ Resizing containers:
 
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
@@ -171,14 +169,20 @@ bindsym $mod+r mode "resize"
 # -------------- Atajos
 
 
-    bindsym $mod+F1 exec brave-browser
-    bindsym $mod+F2 exec wezterm start /home/esteban/.local/bin/nvim
+    bindsym $mod+F1 exec nvim 
+    bindsym $mod+F2 exec $browser 
     bindsym $mod+F3 exec pcmanfm
     bindsym $mod+F4 exec obsidian
-    bindsym $mod+F6 exec youtube-music
+    bindsym $mod+F6 exec glassy-music-nankill
 
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 include /etc/sway/config.d/*
+
+# Especiales 
+
+# Todas las ventanas de Firefox sin barra de título, borde de 1px
+for_window [app_id="helium-browser"] border pixel 1
+for_window [app_id="obsidian"] border pixel 1

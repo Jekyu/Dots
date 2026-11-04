@@ -6,3 +6,12 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- En lua/config/autocmds.lua
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "tex", "latex", "markdown", "gitcommit" },
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { "es" }
+  end,
+})

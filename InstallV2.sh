@@ -2,13 +2,16 @@
 
 # ---------------- Aplicaciones -----------
 
-sudo apt install sway waybar wezterm slurp grim flameshot
+sudo apt install sway waybar wezterm rofi flameshot qtwayland5 xdg-desktop-portal xdg-desktop-portal-gtk
 
 # ---------------- Curls --------------
 curl de nvim
 
 # -------------- Enlaces ---------------
 ln -sf ~/Dots/fonts/ ~/.local/share/fonts
+fc-cache -fv
+
+ln -sf ~/Dots/foot/ ~/.config/foot
 
 # Sway
 ln -sf ~/Dots/sway/ ~/.config/sway
@@ -20,7 +23,7 @@ ln -sf ~/Dots/wezterm/ ~/.config/wezterm
 ln -sf ~/Dots/waybar/ ~/.config/waybar
 
 # Wofi
-ln -sf ~/Dots/wofi ~/.config/wofi
+ln -sf ~/Dots/rofi ~/.config/rofi
 
 # nvim
 ln -sf ~/Dots/nvim/ ~/.config/nvim

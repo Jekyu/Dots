@@ -60,3 +60,24 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+
+from ranger.ext.img_display import ImageDisplayer, register_image_displayer
+import subprocess
+from shlex import quote
+
+@register_image_displayer("wezterm-image-display-method")
+class WeztermImageDisplayer(ImageDisplayer):
+    def draw(self, path, start_x, start_y, width, height):
+        # Mover el cursor a la posición donde empezará la imagen
+        print("\033[%d;%dH" % (start_y, start_x+1))
+        path = quote(path)
+        draw_cmd = "wezterm imgcat {} --width {} --height {}".format(path, width, height)
+        subprocess.run(draw_cmd.split(" "))
+    
+    def clear(self, start_x, start_y, width, height):
+        # Limpiar el área donde estaba la imagen
+        cleaner = " "*width
+        for i in range(height):
+            print("\033[%d;%dH" % (start_y+i, start_x+1))
+            print(cleaner)

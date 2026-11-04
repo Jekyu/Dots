@@ -3,79 +3,73 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
+        "custom/power",
+        "clock",
+        "tray",
         "sway/mode",
-        "sway/scratchpad",
-        "custom/media"
     ],
     "modules-center": [
-        "clock"
+        "sway/workspaces",
     ],
     "modules-right": [
-        "pulseaudio",
-        //"network",
+        "network",
         "cpu",
         "memory",
-        "keyboard-state",
-        "sway/language",
-        "tray",
-        "custom/power"
+        "disk",
+        "pulseaudio",
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format-icons": {
+             "urgent": ""
+             //"focused": "",
+             //"default": ""
+         }
+     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+         "icon-size": 20
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": " {:%a %d  %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%H:%M}",
     },
-    "cpu": {
-        "format": "{usage}% ",
+        "cpu": {
+        "format": " {usage}",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": " {}"
+    },
+   "disk": {
+    "format": " {free}",
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-ethernet": "󰈀",
+        // "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname}: {gwaddr} 󰈀",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "⚠ 󰈂 󰤫",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{volume} {icon} {format_source}",
+        "format-bluetooth": "{volume}%{icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-muted": "   ",
+        "format-source": "",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": ["", "","󰕾", " "],
             "hands-free": "",
             "headset": "",
             "phone": "",
@@ -98,15 +92,17 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "/usr/share/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+      "format" : "󰣇 ",
+      "on-click": "rofi -show",
+		  "tooltip": false,
+      "on-click-right": "~/.config/rofi/scripts/pm.sh"
+		  /*"menu-file": "/usr/share/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
+		  "menu": "on-click",
+		  "menu-actions": {
+			  "shutdown": "systemctl poweroff",
+			  "reboot": "systemctl reboot",
+			  "suspend": "systemctl suspend",
+			  "hibernate": "systemctl hibernate"
+		}*/
     }
 }
